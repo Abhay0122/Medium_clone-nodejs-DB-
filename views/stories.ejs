@@ -1,0 +1,43 @@
+<%-include('header')%>
+<style>
+  .blog img {
+      height: 100px;
+  }
+  .user_story_card h3 img{
+    height: 100px;
+  }
+</style>
+  <!-- nav -->
+  <%- include('nav-home')%>
+
+
+    <% stories.forEach((elem)=>{%>
+      <!-- <%= JSON.stringify(elem.blogs)%> -->
+      <div class="user_story_card">
+        <h3>
+            <img src="/uploads/<%= user.avatar%>" alt="" />
+            <%= user.name%>
+        </h3>
+        <div class="blog"><%- elem.blog%></div>
+    </div>
+    <%})%>
+
+
+
+
+
+
+
+    <!--  -->
+      <div id="menu_list_overlay">
+        <a href="/profile"><i class="ri-user-line"></i>Profile</a>
+        <a href="/lists"><i class="ri-list-check"></i>Lists</a>
+        <a href="/stories"><i class="ri-database-2-line"></i>Stories</a>
+        <hr>
+        <a href="/settings">Settings</a>
+        <hr>
+        <a href="/signout">Signout</a>
+      </div>
+
+      <!--  -->
+      <%-include('footer')%>

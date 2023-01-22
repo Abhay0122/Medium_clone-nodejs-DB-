@@ -1,0 +1,50 @@
+<%-include('header')%>
+<style>
+  .blog img {
+      height: 100px;
+  }
+  .author_story_card h3 img{
+    height: 100px;
+  }
+</style>
+  <!-- nav -->
+  <%- include('nav-home')%>
+
+
+    
+
+  <div>
+    <% blogs.forEach(elem => { %>
+      <!-- <%= JSON.stringify(elem.blog)%> -->
+      <div class="author_story_card">
+          <h3>
+              <img height="30" src="/uploads/<%= elem.author.avatar%>" alt="" />
+              <%= elem.author.name%>
+          </h3>
+          <div class="blog"><%- elem.blog%></div>
+      </div>
+      <% }) %>      
+  </div>
+
+
+
+
+
+
+
+
+
+<!--  -->
+    <div id="menu_list_overlay">
+      <a href="/profile"><i class="ri-user-line"></i>Profile</a>
+      <a href="/lists"><i class="ri-list-check"></i>Lists</a>
+      <a href="/stories"><i class="ri-database-2-line"></i>Stories</a>
+      <hr>
+      <a href="/settings">Settings</a>
+      <hr>
+      <a href="/signout">Signout</a>
+    </div>
+
+
+    <!--  -->
+    <%-include('footer')%>

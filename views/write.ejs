@@ -1,0 +1,41 @@
+<%-include('header')%>
+  <!-- nav -->
+  <%- include('nav-home')%>
+
+
+    <!--  -->
+    <div class="write-page">
+      <h1>Write your story...</h1>
+      <div id="editorjs"></div>
+      <button id="editorjs-btn">Publish</button>
+    </div>
+    <!--  -->
+
+
+    <!--  -->
+    <div id="menu_list_overlay">
+      <a href="/profile"><i class="ri-user-line"></i>Profile</a>
+      <a href="/lists"><i class="ri-list-check"></i>Lists</a>
+      <a href="/stories"><i class="ri-database-2-line"></i>Stories</a>
+      <hr>
+      <a href="/settings">Settings</a>
+      <hr>
+      <a href="/signout">Signout</a>
+    </div>
+    <!--  -->
+
+
+    <!--  -->
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/header@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/image@2.3.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/link@2.0.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/list@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/embed@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/quote@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/code@2.8.0/dist/bundle.min.js"></script>
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="/javascripts/edit.js"></script>
+
+    <!--  -->
+    <%-include('footer')%>

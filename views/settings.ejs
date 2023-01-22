@@ -1,0 +1,205 @@
+<%-include('header')%>
+  <!-- nav -->
+  <%- include('nav-home')%>
+
+    <!-- profile -->
+
+    <div class="profile_content_wrapper">
+      <!-- left -->
+      <div class="profile_content_left">
+        <div class="profile_content_left_top settings_left_top">
+          <h1>
+            Settings
+          </h1>
+        </div>
+        <div class="profile_content_left_middle">
+          <nav>
+            <a href="/settings"><span>Account</span></a>
+        </div>
+        <div class="profile_content_left_bottom">
+
+          <!-- email -->
+          <div class="settings_email_wrapper">
+            <h2>Email address</h2>
+            <span>
+              <%= user.email%>
+            </span>
+          </div>
+          <!-- settings_email_update_form -->
+          <div class="settings_email_update_form">
+            <div class="settings_email_update_form_top">
+              <h1>Email address</h1>
+              <i class="ri-close-fill"></i>
+            </div>
+            <form class="settings_email_update_form_middle" action="/settings-email" method="post">
+              <input class="settings_email_update_form_input" type="email" placeholder="@email" name="email"
+                value="<%= user.email%>">
+              <small>You can sign into Medium with this email address.</small>
+              <div class="settings_email_update_form_bottom">
+                <a href="/settings">Cancel</a>
+                <button>Save</button>
+              </div>
+            </form>
+          </div>
+          <!-- END-Email -->
+
+          <!-- username -->
+          <div class="settings_username_wrapper">
+            <h2>Username</h2>
+            <span>
+              <%= user.username%>
+            </span>
+          </div>
+          <!-- settings_username_update_form -->
+          <div class="settings_username_update_form">
+            <div class="settings_username_update_form_top">
+              <h1>Username</h1>
+              <i class="ri-close-fill"></i>
+            </div>
+            <form class="settings_username_update_form_middle" action="/settings-username" method="post">
+              <input class="settings_username_update_form_input" type="text" placeholder="username" name="username"
+                value="<%= user.username%>">
+              <small>medium.com/<%= user.username%></small>
+              <div class="settings_username_update_form_bottom">
+                <a href="/settings">Cancel</a>
+                <button>Save</button>
+              </div>
+            </form>
+          </div>
+          <!-- username-END -->
+
+          <!-- profile-info -->
+          <div class="settings_profileinfo_wrapper">
+            <div class="settings_profileinfo_wrapper_left">
+              <h2>Profile information</h2>
+              <small>Edit your photo, name, bio, etc.</small>
+            </div>
+            <div class="settings_profileinfo_wrapper_right">
+              <span>
+                <%= user.name%>
+              </span>
+              <div
+                style="background-image: url('/uploads/<%= user.avatar%>'); background-position: center; background-size: contain;">
+              </div>
+            </div>
+          </div>
+          <!-- settings_profileinfo_update_form -->
+          <div class="settings_profileinfo_update_form">
+            <div class="settings_profileinfo_update_form_top">
+              <h1>Profile information</h1>
+              <i class="ri-close-fill"></i>
+            </div>
+            <div class="Profileinfo_avatar_update_wrapper">
+              <h2>Photo</h2>
+              <div class="avatar_update_form_wrapper">
+                <div class="avatar_img"
+                  style="background-image: url('/uploads/<%= user.avatar%>'); background-position: center; background-size: contain;">
+                </div>
+                <div class="avatar_update_form_section">
+                  <form class="avatar_img_form" action="/settings-avatar" method="post" enctype="multipart/form-data">
+                    <input class="avatar_img_form_input" type="file" name="avatar">
+                    <input type="hidden" value="<%= user.avatar%>" name="oldavatar">
+                    <div class="avatar_img_form_btn_wrapper">
+                      <button>Update</button>
+                      <a href="/delete">Remove</a>
+                    </div>
+                  </form>
+                  <small>Recommended: Square JPG, PNG, or GIF, at least 1,000 pixels per side.</small>
+                </div>
+              </div>
+            </div>
+            <form class="settings_profileinfo_update_form_middle" action="/settings-profileinfo" method="post">
+              <label for="name">Name*</label>
+              <input class="settings_profileinfo_update_form_input" type="text" placeholder="name" id="name" name="name"
+                value="<%= user.name%>">
+              <small>Appears on your Profile page, as your byline, and in your responses.</small>
+              <label for="bio">Bio*</label>
+              <input type="text" class="settings_profileinfo_update_form_input" id="bio" name="bio" placeholder="Bio"
+                value="<%= user.bio%>">
+              <small>Appears on your Profile and next to your stories.</small>
+              <div class="settings_profileinfo_update_form_bottom">
+                <a href="/settings">Cancel</a>
+                <button>Save</button>
+              </div>
+            </form>
+          </div>
+          <!--  profileinfo-END -->
+          <hr>
+          <!-- delete account -->
+          <div class="delete-account">
+            <a href="/delete-account">Delete account</a>
+            <small>Permanently delete your account and all of your content.</small>
+          </div>
+          <!-- reset password -->
+          <div class="reset-password">
+            <a href="/reset-password">Reset password</a>
+            <small>Click here to change your password.</small>
+          </div>
+          
+
+        </div>
+      </div>
+      <!-- right -->
+      <div class="profile_content_right"></div>
+
+    </div>
+
+
+
+
+
+
+    <!--  -->
+    <div id="menu_list_overlay">
+      <a href="/profile"><i class="ri-user-line"></i>Profile</a>
+      <a href="/lists"><i class="ri-list-check"></i>Lists</a>
+      <a href="/stories"><i class="ri-database-2-line"></i>Stories</a>
+      <hr>
+      <a href="/settings">Settings</a>
+      <hr>
+      <a href="/signout">Signout</a>
+    </div>
+
+    <!--  -->
+    <%-include('footer')%>
+
+      <script>
+        // email
+        const settings_email_wrapper = document.querySelector('.settings_email_wrapper');
+        const settings_email_update_form = document.querySelector('.settings_email_update_form');
+        const settingsFromCancelBtn = document.querySelector('.settings_email_update_form_top>i');
+
+        settings_email_wrapper.addEventListener('click', function () {
+          settings_email_update_form.style.display = "flex";
+        });
+        settingsFromCancelBtn.addEventListener('click', function () {
+          settings_email_update_form.style.display = "none";
+        });
+        // 
+        // username
+        const settings_username_wrapper = document.querySelector('.settings_username_wrapper');
+        const settings_username_update_form = document.querySelector('.settings_username_update_form');
+        const settingsFromBtn = document.querySelector('.settings_username_update_form_top>i');
+
+        settings_username_wrapper.addEventListener('click', function () {
+          settings_username_update_form.style.display = "flex";
+        });
+        settingsFromBtn.addEventListener('click', function () {
+          settings_username_update_form.style.display = "none";
+        });
+        // 
+        //profileinfo 
+        const settings_profileinfo_wrapper = document.querySelector('.settings_profileinfo_wrapper');
+        const settings_profileinfo_update_form = document.querySelector('.settings_profileinfo_update_form');
+        const ProfileInfoFromBtn = document.querySelector('.settings_profileinfo_update_form_top>i');
+
+        settings_profileinfo_wrapper.addEventListener('click', function () {
+          settings_profileinfo_update_form.style.display = "flex";
+        });
+        ProfileInfoFromBtn.addEventListener('click', function () {
+          settings_profileinfo_update_form.style.display = "none";
+        });
+        //
+
+
+      </script>

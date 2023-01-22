@@ -1,0 +1,36 @@
+<%-include('header')%>
+  <!-- siginin_page -->
+
+  <div class="signin_page">
+    <div class="form_Wrapper signin_form_Wrapper">
+      <div id="sigin_cancel">
+        <a href="/">
+          <i class="ri-close-fill"></i>
+        </a>
+      </div>
+      <!--  -->
+      <h1>Sign in with email</h1>
+      <p id="signin_info_text">Enter the email address associated with your account, and we’ll send a magic link to your inbox.</p>
+      <!--  -->
+      <form action="/signin" method="post" class="signin_email_form"> 
+        <input class="input_signin_email" type="email" placeholder="Your Email" name="email">
+        <input class="input_signin_pwd" type="password" placeholder="******" name="password">
+        <button>Sign In</button>
+      </form>
+      <!--  -->
+      <a id="redirect_signinoptions" class="forget-password-btn" href="/forget-password">Forget password?</a>
+      <!--  -->
+      <a id="redirect_signinoptions" href="/signinOptions">&#706;&nbsp;&nbsp;All signin options.</a>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+  <!--  -->
+  <%-include('footer')%>

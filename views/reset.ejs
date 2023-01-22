@@ -1,0 +1,34 @@
+<%-include('header')%>
+  <!-- siginin_page -->
+
+  <div class="signin_page">
+    <div class="form_Wrapper signin_form_Wrapper">
+      <div id="sigin_cancel">
+        <a href="/settings">
+          <i class="ri-close-fill"></i>
+        </a>
+      </div>
+      <!--  -->
+      <h1>Reset Password</h1>
+      <p id="signin_info_text"></p>
+      <!--  -->
+      <form action="/reset-password" method="post" class="signin_email_form">
+        <input class="input_signin_pwd" type="password" placeholder="OldPassword*" name="oldPassword">
+        <input class="input_signin_pwd" type="password" placeholder="NewPassword*" name="newPassword">
+        <button>Reset password</button>
+      </form>
+      <!--  -->
+      <a id="redirect_signinoptions" href="/settings">&#706;&nbsp;&nbsp;Back to the settings page.</a>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+  <!--  -->
+  <%-include('footer')%>

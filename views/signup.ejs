@@ -1,0 +1,36 @@
+<%-include('header')%>
+  <!-- siginin_page -->
+
+  <div class="signin_page">
+    <div class="form_Wrapper signin_form_Wrapper">
+      <div id="sigin_cancel">
+        <a href="/">
+          <i class="ri-close-fill"></i>
+        </a>
+      </div>
+      <!--  -->
+      <h1>Sign up with email</h1>
+      <p id="signin_info_text">Enter your email address to create an account.</p>
+      <!--  -->
+      <form action="/signup" method="post" class="signin_email_form">
+        <input class="input_signup_email" type="text" placeholder="name" name="name">
+        <input class="input_signup_email" type="text" placeholder="username" name="username">
+        <input class="input_signup_email" type="email" placeholder="Email" name="email">
+        <input class="input_signup_email" type="password" placeholder="******" name="password">
+        <button>Sign Up</button>
+      </form>
+      <!--  -->
+      <a id="redirect_signinoptions" href="/SignupOptions">&#706;All signup options.</a>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+  <!--  -->
+  <%-include('footer')%>

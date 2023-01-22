@@ -1,0 +1,39 @@
+<nav class="nav-userHome">
+    <div class="nav-userHome_left">
+        <a href="/home">
+            <h1>
+                <div class="small_circle"></div>
+                <div class="large_circle"></div>
+                M
+            </h1>
+        </a>
+        <form class="search" action="/search" method="post">
+            <div id="search_content_wrapper">
+                <i class="ri-search-line"></i>
+                <input class="search_input" type="search" name="search" placeholder="Search Medium">
+            </div>
+        </form>
+    </div>
+    <!--  -->
+    <div class="nav-userHome_right">
+        <a id="write" href="/write">
+            <img src="/images/icons8-write-48.png" alt="">
+            <span>write</span>
+        </a>
+        <a id="bell" href="/notification">
+            <i class="ri-notification-2-line"></i>
+        </a>
+        <!--  -->
+        <div class="user_menu_list">
+            <div id="profile_img" style="background-image: url('/uploads/<%= user.avatar%>'); background-position: center; background-size: contain;"></div>
+            <div id="down_arrow">
+                <i class="ri-arrow-down-s-line"></i>
+            </div>
+        </div>
+
+    </div>
+
+    
+
+
+</nav>

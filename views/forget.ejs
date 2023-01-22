@@ -1,0 +1,33 @@
+<%-include('header')%>
+  <!-- siginin_page -->
+
+  <div class="signin_page">
+    <div class="form_Wrapper signin_form_Wrapper">
+      <div id="sigin_cancel">
+        <a href="/signin">
+          <i class="ri-close-fill"></i>
+        </a>
+      </div>
+      <!--  -->
+      <h1>Forget Password</h1>
+      <p id="signin_info_text">Enter the register email address and check your inbox, check spam in case not found in inbox.</p>
+      <!--  -->
+      <form action="/forget-password" method="post" class="signin_email_form">
+        <input class="input_signin_pwd" type="email" placeholder="example@email.com" name="email">
+        <button>Enter Registered Email</button>
+      </form>
+      <!--  -->
+      <a id="redirect_signinoptions" href="/signin">&#706;&nbsp;&nbsp;Back to the signin page.</a>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+  <!--  -->
+  <%-include('footer')%>
